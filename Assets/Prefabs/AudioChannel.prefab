@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3754143990742024747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7704251122504519217}
+  - component: {fileID: 5088960819885606341}
+  - component: {fileID: 289060597487177059}
+  - component: {fileID: -5379839910199319518}
+  - component: {fileID: 1062431001815485904}
+  m_Layer: 0
+  m_Name: AudioChannel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7704251122504519217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754143990742024747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5088960819885606341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754143990742024747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22c4ba8e88214e4f859911f07f97d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioActiveObjectList: []
+  m_AudioDeactiveObjectList: []
+  m_eChannelType: 0
+  m_nMaxAudioObject: 0
+  m_trTransform: {fileID: 0}
+  AudioObjectPrefab: {fileID: 3194153632109960953, guid: e07c6d97784a9a6438ba8e09debcce29,
+    type: 3}
+  m_bActive: 0
+  _m_fStandardVolume: 0
+  _m_fVolume: 0
+  _m_fFadeVolume: 0
+  _m_bMute: 0
+  m_Fader: {fileID: 289060597487177059}
+  m_nPriority: 0
+  m_fSpatialBlend: 0
+--- !u!114 &289060597487177059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754143990742024747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8292a207d9fd9e340b0ca880424efea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  datas:
+  - {fileID: -5379839910199319518}
+  - {fileID: 1062431001815485904}
+  lerpModel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  floatBlendingEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5088960819885606341}
+        m_MethodName: set_m_fFadeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  vector3BlendingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  colorBlendingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5379839910199319518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754143990742024747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af009b9524770a446bd38d262cb51428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUIBlendingData:
+    floatValue: 0
+    useFloatBlending: 1
+    vector3Value: {x: 0, y: 0, z: 0}
+    useVector3Blending: 0
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    useColorBlending: 0
+--- !u!114 &1062431001815485904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754143990742024747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af009b9524770a446bd38d262cb51428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUIBlendingData:
+    floatValue: 0
+    useFloatBlending: 1
+    vector3Value: {x: 0, y: 0, z: 0}
+    useVector3Blending: 0
+    colorValue: {r: 0, g: 0, b: 0, a: 0}
+    useColorBlending: 0
