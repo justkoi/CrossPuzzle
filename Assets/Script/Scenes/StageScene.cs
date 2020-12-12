@@ -20,7 +20,7 @@ public class StageScene : MonoBehaviour
             objBackGrounds[i].SetActive(i == (int)UserDataManager.Instance.currDifficulty);
         }
 
-        for(int i=1; i<= UserDataManager.Instance.maxStage; i++)
+        for(int i=1; i<= Constants.MaxStage; i++)
         {
             StageSlot newSlot = Instantiate(slotTemplate);
             newSlot.transform.parent = trHolder;

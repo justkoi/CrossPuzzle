@@ -14,6 +14,13 @@ public class StageSlot : MonoBehaviour
         btnStage.Init(StartGame);
         btnStage.SetText(nStage.ToString());
         SetStartPosition();
+
+        if (UserDataManager.Instance.currDifficulty == Difficulty.Easy)
+            btnStage.SetStyle(E_COMMON_BUTTON_STYLE.COMMON_STAGE_EASY);
+        else if (UserDataManager.Instance.currDifficulty == Difficulty.Normal)
+            btnStage.SetStyle(E_COMMON_BUTTON_STYLE.COMMON_STAGE_NORMAL);
+        else if (UserDataManager.Instance.currDifficulty == Difficulty.Hard)
+            btnStage.SetStyle(E_COMMON_BUTTON_STYLE.COMMON_STAGE_HARD);
     }
 
     public int[] uiPositionX = { -300, 0, +300 };
@@ -30,6 +37,6 @@ public class StageSlot : MonoBehaviour
 
     public void StartGame()
     {
-
+        UserDataManager.Instance.currStage = nStage;
     }
 }
