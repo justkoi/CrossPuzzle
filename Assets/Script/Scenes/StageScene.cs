@@ -7,10 +7,18 @@ public class StageScene : MonoBehaviour
     public GameObject[] objBackGrounds;
     public StageSlot slotTemplate;
     public Transform trHolder;
+
+    public CommonButton btnBack;
     // Start is called before the first frame update
     void Start()
     {
+        btnBack.Init(OnClickBack);
         SetBackground();
+    }
+
+    public void OnClickBack()
+    {
+        FadeInManager.Instance.FadingTranslation("DifficultyScene");
     }
 
     public void SetBackground()

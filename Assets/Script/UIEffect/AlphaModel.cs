@@ -13,6 +13,8 @@ public class AlphaModel : MonoBehaviour
 
     public tk2dBaseSprite fParent;
 
+    public tk2dTextMesh textTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,16 @@ public class AlphaModel : MonoBehaviour
             fTimer -= fTime;
 
         var value = alphaCurve.Evaluate(fTimer);
-        if(fParent != null)
-            spriteTarget.SetAlpha(value * fParent.color.a);
-        else
-            spriteTarget.SetAlpha(value);
+        if (spriteTarget != null)
+        {
+            if (fParent != null)
+                spriteTarget.SetAlpha(value * fParent.color.a);
+            else
+                spriteTarget.SetAlpha(value);
+        }
+        if(textTarget != null)
+        {
+            textTarget.SetAlpha(value);
+        }
     }
 }

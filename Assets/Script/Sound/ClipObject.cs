@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LaTale.Sound;
+using Audio.Sound;
 
 public class ClipObject : MonoBehaviour {
     /// <summary>

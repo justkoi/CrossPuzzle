@@ -37,4 +37,11 @@ public enum E_EFFECT_TYPE
     Pop_White,
     Dot,
     Line,
+    Msg_Dot,
+    Msg_Line,
+    Msg_Triangle,
+    Msg_Square,
+    Msg_Pentagon,
+    Score,
+    Lightning,
 }

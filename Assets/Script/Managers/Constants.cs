@@ -11,5 +11,5 @@
     public static int BlockMapHeight_InRange = 10;
     public static float BlockWidth = 144;
     public static float BlockHeight = 153.6f;
-
+    public static int BlockPopScore = 10;
 }

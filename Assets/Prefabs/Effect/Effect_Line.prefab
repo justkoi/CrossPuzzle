@@ -114,6 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365955447799495011}
   - component: {fileID: 2365955447799495010}
+  - component: {fileID: 6041675393325781715}
   m_Layer: 0
   m_Name: Effect_Line
   m_TagString: Untagged
@@ -149,3 +150,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fTime: 1
+  textName: {fileID: 0}
+  power: {x: 0, y: 0}
+--- !u!114 &6041675393325781715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2365955447799495008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f806d70e290a510488fe8b3c1076bbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fTime: 1
+  fSlowly: 1
+  alphaCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.5
+      value: 1.0023575
+      inSlope: -2.004715
+      outSlope: -2.004715
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.004715
+      outSlope: -2.004715
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spriteTarget: {fileID: 5828460780482518517}
+  fParent: {fileID: 0}
+  textTarget: {fileID: 0}

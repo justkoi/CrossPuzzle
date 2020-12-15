@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using LaTale.Sound;
 using Global.Constants;
-
+using Audio.Sound;
+using System.Collections.Generic;
 /// <summary>
 /// 오디오 채널입니다. (동시에 몇개의 실제 오디오 오브젝트를 가질 것인지를 컨트롤 합니다.
 /// </summary>

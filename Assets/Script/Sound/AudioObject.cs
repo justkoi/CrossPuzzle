@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using LaTale.Sound;
+using Audio.Sound;
 using Global.Constants;
 
 public enum E_SOUND_FADE_PROCESS

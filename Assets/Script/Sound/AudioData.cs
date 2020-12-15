@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Global.Constants;
 
-namespace LaTale.Sound
+namespace Audio.Sound
 {
     /// <summary>
     /// 오디오 그룹 (특정부분)

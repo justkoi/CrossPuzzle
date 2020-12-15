@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Global.Constants;
-using LaTale.Sound;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

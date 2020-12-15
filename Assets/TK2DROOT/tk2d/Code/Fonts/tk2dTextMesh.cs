@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 [System.Serializable]
 public class tk2dTextMeshData
@@ -38,8 +39,13 @@ public class tk2dTextMesh : MonoBehaviour, tk2dRuntime.ISpriteCollectionForceBui
 	tk2dFontData _fontInst;
 	string _formattedText = "";
 
-	// This stuff now kept in tk2dTextMeshData. Remove in future version.
-	[SerializeField] tk2dFontData _font = null;
+    public void SetAlpha(float a)
+    {
+        color = new Color(color.r, color.g, color.b, a);
+    }
+
+    // This stuff now kept in tk2dTextMeshData. Remove in future version.
+    [SerializeField] tk2dFontData _font = null;
 	[SerializeField] string _text = ""; 
 	[SerializeField] Color _color = Color.white; 
 	[SerializeField] Color _color2 = Color.white; 

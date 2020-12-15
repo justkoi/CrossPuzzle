@@ -17,15 +17,45 @@ public class Block : MonoBehaviour
     private static float baseGravityPower = Constants.BlockHeight * 6.0f;
     private float gravityPower = baseGravityPower;
 
-    public void Init(E_BLOCK_TYPE eBlockType, int x, int y)
+    public float fSelectTimer = 0;
+    private static float fSelectTime = 1.0f;
+
+    public GameScene gameScene;
+    public E_ITEM_TYPE eItemType = E_ITEM_TYPE.None;
+
+    public void Init(GameScene gameScene, E_BLOCK_TYPE eBlockType, int x, int y)
     {
+        this.gameScene = gameScene;
         this.eBlockType = eBlockType;
         this.x = x;
         this.y = y;
 
-
         InitBlockType();
         InitPosition();
+        view.btnBlock.Init(OnClickBlock);
+        SetupItem();
+    }
+
+    public void SetupItem()
+    {
+        if(UserDataManager.Instance.currStage >= 6)
+        {
+            int random = UnityEngine.Random.Range(0, 100);
+            if (random <= 1)
+            {
+                eItemType = E_ITEM_TYPE.Lighting;
+            }
+        }
+        if(eItemType != E_ITEM_TYPE.None)
+        view.items[((int)eItemType)].SetActive(true);
+    }
+
+    public void OnClickBlock()
+    {
+        if(gameScene.eGameStep == E_GAME_STEP.Select)
+        {
+            gameScene.selector.Select(this);
+        }
     }
 
     private void InitBlockType()
@@ -52,6 +82,12 @@ public class Block : MonoBehaviour
                 break;
         }
     }
+
+    public void Select()
+    {
+        fSelectTimer = 1.0f;
+    }
+
     private void InitPosition()
     {
         this.transform.SetLocalPosition(Constants.BlockWidth * (x - 3), Constants.BlockHeight * (y),0);
@@ -71,6 +107,19 @@ public class Block : MonoBehaviour
         nextPosY = Constants.BlockHeight * (nextY);
         if(!continuous)
             gravityPower = baseGravityPower;
+    }
+    bool destroing = false;
+    public void DelayedDestroy()
+    {
+        destroing = true;
+        var nextRoutine = CoroutineManager.Instance.AddFadeCoroutine(this, view.btnBlock.m_spriteButtonUp, CoroutineManager.Instance.CreateFadeCoroutine(view.btnBlock.m_spriteButtonUp, 1, 0, 0.6f));
+        CoroutineManager.Instance.AddNextCoroutine(this, nextRoutine, DestroyRoutine());
+    }
+
+    IEnumerator DestroyRoutine()
+    {
+        Destroy(this.gameObject);
+        yield return CoroutineManager.End();
     }
 
     private void Falling()
@@ -113,7 +162,19 @@ public class Block : MonoBehaviour
 
     void Update()
     {
-        if(eBlockState == E_BLOCK_STATE.None)
+        
+        if (fSelectTime > float.Epsilon)
+        {
+            fSelectTimer -= Time.deltaTime;
+            if (fSelectTimer <= 0)
+                fSelectTimer = 0;
+        }
+        view.spriteAura.SetAlpha(fSelectTimer);
+
+        if (destroing)
+            return;
+
+        if (eBlockState == E_BLOCK_STATE.None)
         {
             if(CanFall())
             {
@@ -146,11 +207,18 @@ public class Block : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        CoroutineManager.Instance.RemoveAllCoroutines(this);
+    }
 }
 [System.Serializable]
 public class BlockView
 {
+    public GameObject[] items;
     public CommonButton btnBlock;
+    public tk2dSprite spriteAura;
 }
 public enum E_BLOCK_TYPE
 {
@@ -168,4 +236,10 @@ public enum E_BLOCK_STATE
     None,
     Falling,
     Bounced,
+}
+
+public enum E_ITEM_TYPE
+{
+    None,
+    Lighting,
 }

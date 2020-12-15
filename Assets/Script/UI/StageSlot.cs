@@ -31,12 +31,14 @@ public class StageSlot : MonoBehaviour
         int x = ((nStage-1) % 3) + 1;
         int y = ((nStage-1) / 3);
 
-        this.transform.SetLocalPositionXY(uiPositionX[x-1],y* uiPositionY) ;
-        
+        this.transform.SetLocalPositionXY(uiPositionX[x-1],y* uiPositionY);
+        this.transform.SetLocalPositionZ(0);
+
     }
 
     public void StartGame()
     {
         UserDataManager.Instance.currStage = nStage;
+        FadeInManager.Instance.FadingTranslation("GameScene");
     }
 }

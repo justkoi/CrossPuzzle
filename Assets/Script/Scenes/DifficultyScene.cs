@@ -15,6 +15,8 @@ public class DifficultyScene : MonoBehaviour
     public CommonButton btnNormal;
     public CommonButton btnHard;
 
+    public CommonButton btnBack;
+
     IEnumerator coDynamicColorize;
     void Start()
     {
@@ -22,11 +24,20 @@ public class DifficultyScene : MonoBehaviour
         btnNormal.Init(OnClickNormal);
         btnHard.Init(OnClickHard);
 
+        btnBack.Init(OnClickBack);
+
         spriteEasy.SetAlpha(1.0f);
         spriteNormal.SetAlpha(0.0f);
         spriteHard.SetAlpha(0.0f);
         CoroutineManager.Instance.AddCoroutine(this, DynamicColorize());
     }
+
+    public void OnClickBack()
+    {
+        FadeInManager.Instance.FadingTranslation("TitleScene");
+    }
+
+
     public void GoToNextScene()
     {
         FadeInManager.Instance.FadingTranslation("StageScene");

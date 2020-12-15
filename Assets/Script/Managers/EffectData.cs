@@ -7,6 +7,8 @@ public class EffectData : MonoBehaviour
     public float fTime;
     private float fTimer;
 
+    public tk2dTextMesh textName;
+    public Vector2 power;
     
     void Start()
     {
@@ -21,6 +23,12 @@ public class EffectData : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        this.transform.SetLocalPositionXY(this.transform.localPosition.x + (power.x * Time.deltaTime), this.transform.localPosition.y + (power.y * Time.deltaTime));
+    }
+
+    public void SetText(string text)
+    {
+        textName.text = text;
     }
 
     private void Playing()

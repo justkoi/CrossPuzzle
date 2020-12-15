@@ -305,7 +305,7 @@ MonoBehaviour:
   m_spriteIcon: {fileID: 2816992895398053590}
   m_nLanguageId: 0
   m_bBlocked: 0
-  soundName: 
+  soundName: StageStart
   m_eInitType: 1
 --- !u!114 &1508798995919489108
 MonoBehaviour:

@@ -913,7 +913,6 @@ public class Updater
             Debug.LogError("[코루틴매니저-FatalError] 심각한 에러가 있어 에디터를 일시정지합니다. 다음 에러 로그를 확인하십시오.");
             Debug.LogError(string.Concat("[코루틴매니저-FatalError] 잘못된 코루틴 사용이 있어 이 코루틴(", m_Iterator.ToString(), ")은 제거되었습니다. 해당 코루틴을 확인하십시오. 자세한 내용은 아래의 에러를 확인하십시오.\n", ex.ToString()));
             string errorLog = string.Concat("ERROR : CoroutineManager : ", m_Iterator.ToString());
-            LaTaleUIManager.DebugBreakPopup(errorLog);
             CoroutineManager.OnErrorEvent.Execute(ex);
             return;
         }
