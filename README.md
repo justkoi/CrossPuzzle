@@ -10,11 +10,15 @@
 
 개발기간 : 2019년 7월~ 2019년 12월
 
-핵심 기술 / 알고리즘 : 한글 텍스트를 순차적으로 재생시켜주는 기능. 파일입출력을 통한 타일 맵 시스템 구현. 여러 맵 사이의 전환. 이동 및 NPC 상호작용. NPC채팅 시스템.
+핵심 기술 / 알고리즘 : 블록 생성 및 파괴. 선에 닿은 블록 터트리기.
 
-플레이영상 : https://youtu.be/WKIJbArL8aM
+플레이영상 : https://youtu.be/nG6A620ewCw
 
 프로젝트 주소 : https://github.com/justkoi/CrossPuzzle
 
-### 핵심 코드 설명
+### 핵심 코드
+
+**Block.cs, BlockGroup.cs** : https://github.com/justkoi/CrossPuzzle/tree/main/Assets/Script/Game
+
+**GameScene.cs** : https://github.com/justkoi/CrossPuzzle/tree/main/Assets/Script/Scenes
 
