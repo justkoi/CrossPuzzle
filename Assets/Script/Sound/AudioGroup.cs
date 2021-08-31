@@ -84,7 +84,7 @@ public class AudioGroup : MonoBehaviour {
         }
     }
 
-    public MyUIBlendingModel m_Fader;
+    public BlendingModel m_Fader;
 
     /// <summary>
     /// From에서 To까지 페이드 진행
@@ -94,8 +94,8 @@ public class AudioGroup : MonoBehaviour {
     /// <param name="fTime"></param>
     public void FadeTo(float fFrom, float fTo, float fTime)
     {
-        m_Fader.datas[0].myUIBlendingData.floatValue = fFrom;
-        m_Fader.datas[1].myUIBlendingData.floatValue = fTo;
+        m_Fader.datas[0].BlendingData.floatValue = fFrom;
+        m_Fader.datas[1].BlendingData.floatValue = fTo;
         m_Fader.StartBlending(0, 1, fTime);
     }
 

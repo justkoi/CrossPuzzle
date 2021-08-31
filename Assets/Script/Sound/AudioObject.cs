@@ -113,7 +113,7 @@ public sealed class AudioObject : MonoBehaviour
 
     public SoundPlayData m_Data;
 
-    public MyUIBlendingModel m_Fader;
+    public BlendingModel m_Fader;
 
     //public E_SOUND_PLAY_CONDITION m_ePlayCondition;
 
@@ -296,8 +296,8 @@ public sealed class AudioObject : MonoBehaviour
     /// <param name="fTime"></param>
     public void FadeTo(float fFrom, float fTo, float fTime)
     {
-        m_Fader.datas[0].myUIBlendingData.floatValue = fFrom;
-        m_Fader.datas[1].myUIBlendingData.floatValue = fTo;
+        m_Fader.datas[0].BlendingData.floatValue = fFrom;
+        m_Fader.datas[1].BlendingData.floatValue = fTo;
         m_Fader.StartBlending(0, 1, fTime, OnFadingFinished);
     }
 
@@ -325,7 +325,7 @@ public sealed class AudioObject : MonoBehaviour
         m_eFadeProcess = E_SOUND_FADE_PROCESS.PAUSE;
     }
 
-    public void OnFadingFinished(MyUIBlendingModel Data)
+    public void OnFadingFinished(BlendingModel Data)
     {
         switch (m_eFadeProcess)
         {

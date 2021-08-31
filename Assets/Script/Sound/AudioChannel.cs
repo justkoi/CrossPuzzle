@@ -194,7 +194,7 @@ public class AudioChannel : MonoBehaviour
         }
     }
 
-    public MyUIBlendingModel m_Fader;
+    public BlendingModel m_Fader;
 
     /// <summary>
     /// 이 채널의 우선순위
@@ -209,8 +209,8 @@ public class AudioChannel : MonoBehaviour
     /// <param name="fTime"></param>
     public void FadeTo(float fFrom, float fTo, float fTime)
     {
-        m_Fader.datas[0].myUIBlendingData.floatValue = fFrom;
-        m_Fader.datas[1].myUIBlendingData.floatValue = fTo;
+        m_Fader.datas[0].BlendingData.floatValue = fFrom;
+        m_Fader.datas[1].BlendingData.floatValue = fTo;
         m_Fader.StartBlending(0, 1, fTime);
 
     }
