@@ -2,13 +2,13 @@
 using System.Collections;
 using System;
 
-public class MyUIInspectorBlendingData : MonoBehaviour
+public class InspectorBlendingData : MonoBehaviour
 {
-    public MyUIBlendingData myUIBlendingData;
+    public BlendingData BlendingData;
 }
 
 [System.Serializable]
-public struct MyUIBlendingData
+public struct BlendingData
 {
     public float floatValue;
     public bool useFloatBlending;
@@ -17,9 +17,9 @@ public struct MyUIBlendingData
     public Color colorValue;
     public bool useColorBlending;
 
-    public static MyUIBlendingData BezierBlend(MyUIBlendingData from, MyUIBlendingData mid, MyUIBlendingData to, float t)
+    public static BlendingData BezierBlend(BlendingData from, BlendingData mid, BlendingData to, float t)
     {
-        MyUIBlendingData result = new MyUIBlendingData();
+        BlendingData result = new BlendingData();
 
         float t2 = t * t;
         float t3 = t2 * t;
@@ -48,9 +48,9 @@ public struct MyUIBlendingData
         return result;
     }
 
-    public static MyUIBlendingData Blend(MyUIBlendingData from, MyUIBlendingData to, float t)
+    public static BlendingData Blend(BlendingData from, BlendingData to, float t)
     {
-        MyUIBlendingData result = new MyUIBlendingData();
+        BlendingData result = new BlendingData();
 
         if (from.useFloatBlending || to.useFloatBlending)
         {
